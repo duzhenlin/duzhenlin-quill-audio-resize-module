@@ -1,33 +1,33 @@
-# duzhenlin-quill-video-resize-module
-A module for Quill rich text editor to allow video to be resized.
+# duzhenlin-quill-audio-resize-module
+A module for Quill rich text editor to allow audio to be resized.
 
 ## Usage
 
 ### install 
 ```javascript
-npm i duzhenlin-quill-video-resize-module
+npm i duzhenlin-quill-audio-resize-module
 ```
 
 ### Webpack/ES6
 
 ```javascript
 import Quill from 'quill';
-import VideoResize from 'quill-video-resize-module';
+import AudioResize from 'quill-audio-resize-module';
 
-Quill.register('modules/VideoResize', VideoResize);
+Quill.register('modules/AudioResize', AudioResize);
 
 const quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        videoResize: {
+        AudioResize: {
             // See optional "config" below
         }
     }
 });
 ```
 
-/!\ You also need to add CSS to disable pointer-events in the video iframe while in editor mode to prevent
+/!\ You also need to add CSS to disable pointer-events in the audio iframe while in editor mode to prevent
 
 ```css
 .quill-editor iframe {
@@ -37,10 +37,10 @@ const quill = new Quill(editor, {
 
 ### Script Tag
 
-Copy video-resize.min.js into your web root or include from node_modules
+Copy audio-resize.min.js into your web root or include from node_modules
 
 ```html
-<script src="/node_modules/quill-video-resize-module/video-resize.min.js"></script>
+<script src="/node_modules/quill-audio-resize-module/audio-resize.min.js"></script>
 ```
 
 ```javascript
@@ -48,14 +48,14 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        VideoResize: {
+        AudioResize: {
             // See optional "config" below
         }
     }
 });
 ```
 
-/!\ You also need to add CSS to disable pointer-events in the video iframe while in editor mode to prevent
+/!\ You also need to add CSS to disable pointer-events in the audio iframe while in editor mode to prevent
 
 ```css
 .quill-editor iframe {
@@ -71,7 +71,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        VideoResize: {}
+        AudioResize: {}
     }
 });
 
@@ -83,7 +83,7 @@ const quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        VideoResize: {
+        AudioResize: {
             modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
         }
     }
@@ -92,9 +92,9 @@ const quill = new Quill(editor, {
 
 Each module is described below.
 
-#### `Resize` - Resize the video
+#### `Resize` - Resize the audio
 
-Adds handles to the video's corners which can be dragged with the mouse to resize the video.
+Adds handles to the audio's corners which can be dragged with the mouse to resize the audio.
 
 The look and feel can be controlled with options:
 
@@ -103,7 +103,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        VideoResize: {
+        AudioResize: {
             // ...
             handleStyles: {
                 backgroundColor: 'black',
@@ -118,7 +118,7 @@ var quill = new Quill(editor, {
 
 #### `DisplaySize` - Display pixel size
 
-Shows the size of the video in pixels near the bottom right of the video.
+Shows the size of the audio in pixels near the bottom right of the audio.
 
 The look and feel can be controlled with options:
 
@@ -127,7 +127,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        VideoResize: {
+        AudioResize: {
             // ...
             displayStyles: {
                 backgroundColor: 'black',
@@ -140,9 +140,9 @@ var quill = new Quill(editor, {
 });
 ```
 
-#### `Toolbar` - Video alignment tools
+#### `Toolbar` - audio alignment tools
 
-Displays a toolbar below the video, where the user can select an alignment for the video.
+Displays a toolbar below the audio, where the user can select an alignment for the audio.
 
 The look and feel can be controlled with options:
 
@@ -151,7 +151,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        VideoResize: {
+        AudioResize: {
             // ...
             toolbarStyles: {
                 backgroundColor: 'black',
@@ -178,7 +178,7 @@ the module setup.
 For example,
 
 ```javascript
-import { Resize, BaseModule } from 'quill-video-resize-module';
+import { Resize, BaseModule } from 'quill-audio-resize-module';
 
 class MyModule extends BaseModule {
     // See src/modules/BaseModule.js for documentation on the various lifecycle callbacks
@@ -188,7 +188,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        VideoResize: {
+        AudioResize: {
             modules: [ MyModule, Resize ],
             // ...
         }

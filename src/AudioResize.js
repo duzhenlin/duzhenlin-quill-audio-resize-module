@@ -248,5 +248,5 @@ export default class AudioResize {
 }
 
 if (window.Quill) {
-	window.Quill.register('modules/AudioResize', VideoH5Resize)
+	window.Quill.register('modules/AudioResize', AudioResize)
 }
