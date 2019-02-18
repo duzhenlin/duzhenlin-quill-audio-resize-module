@@ -109,7 +109,6 @@ export default class AudioResize {
 	}
 
 	handleClick(evt) {
-		console.log(evt);
 		if (evt.target !== this.quill.root) {
 
 			const videos = this.quill.root.querySelectorAll('audio')
@@ -135,8 +134,6 @@ export default class AudioResize {
 			
 
 				if (videos[i] && videos[i].tagName && videos[i].tagName.toUpperCase() === 'AUDIO') {
-
-					console.log(123);
 					if (this.vid === videos[i]) {
 						// we are already focused on this video
 						return
